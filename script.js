@@ -1,42 +1,42 @@
 const url = "https://api.spacexdata.com/v2/launchpads";
 
-d3.json("samples.json").then(function(data){
-    console.log(data);
-});
-
-// use map() method to select only belly button washing freq - wfreq
-d3.json("samples.json").then(function(data){
-    wfreq = data.metadata.map(person => person.wfreq);
-    console.log(wfreq);
-});
-
-// // chain map and sort to sort wfreq in descending order
 // d3.json("samples.json").then(function(data){
-//     wfreq = data.metadata.map(person =>
-// person.wfreq).sort((a,b) => b - a);
+//     console.log(data);
+// });
+
+// // use map() method to select only belly button washing freq - wfreq
+// d3.json("samples.json").then(function(data){
+//     wfreq = data.metadata.map(person => person.wfreq);
 //     console.log(wfreq);
 // });
 
-// filter out null values with the filter() method
-d3.json("samples.json").then(function(data){
-    wfreq = data.metadata.map(person => person.wfreq).sort((a,b) => b - a);
-    filteredWfreq = wfreq.filter(element => element != null);
-    console.log(filteredWfreq);
-});
+// // // chain map and sort to sort wfreq in descending order
+// // d3.json("samples.json").then(function(data){
+// //     wfreq = data.metadata.map(person =>
+// // person.wfreq).sort((a,b) => b - a);
+// //     console.log(wfreq);
+// // });
 
-d3.json("samples.json").then(function(data){
-    firstPerson = data.metadata[0];
-    Object.entries(firstPerson).forEach(([key, value]) =>
-      {console.log(key + ': ' + value);});
-});
+// // filter out null values with the filter() method
+// d3.json("samples.json").then(function(data){
+//     wfreq = data.metadata.map(person => person.wfreq).sort((a,b) => b - a);
+//     filteredWfreq = wfreq.filter(element => element != null);
+//     console.log(filteredWfreq);
+// });
 
-d3.selectAll("body").on("change", updatePage);
+// d3.json("samples.json").then(function(data){
+//     firstPerson = data.metadata[0];
+//     Object.entries(firstPerson).forEach(([key, value]) =>
+//       {console.log(key + ': ' + value);});
+// });
 
-function updatePage() {
-  var dropdownMenu = d3.selectAll("#selectOption").node();
-  var dropdownMenuID = dropdownMenu.id;
-  var selectedOption = dropdownMenu.value;
+// d3.selectAll("body").on("change", updatePage);
 
-  console.log(dropdownMenuID);
-  console.log(selectedOption);
-};
+// function updatePage() {
+//   var dropdownMenu = d3.selectAll("#selectOption").node();
+//   var dropdownMenuID = dropdownMenu.id;
+//   var selectedOption = dropdownMenu.value;
+
+//   console.log(dropdownMenuID);
+//   console.log(selectedOption);
+// };
